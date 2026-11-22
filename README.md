@@ -30,8 +30,9 @@ Farm ──rifornisce──▶ GreenLot ──tostato in──▶ RoastBatch ─
 Ad Assago i reclami per caffè acido passano da 3 a 17 a settimana. Il sospetto ovvio è la macchina espresso,
 ma la telemetria è nella norma. Risalendo la catena si scopre che il caffè arriva da un lotto acquistato
 una settimana dopo la sospensione di una delle farm che lo riforniscono: la regola aziendale
-(la *Fourth Hand Standard*) è stata violata. Un agente con accesso solo alle tabelle fatica a trovarlo;
-un agente che ragiona sull'**ontologia** di Fabric IQ sì.
+(la *Fourth Hand Standard*) è stata violata. Le consegne e i reclami indicano il caffè come causa più
+plausibile. La demo confronta come due agenti motivano la decisione, uno con le tabelle del lakehouse
+e uno con il contesto dell'**ontologia** di Fabric IQ.
 
 ## Cosa contiene
 
@@ -43,10 +44,9 @@ un agente che ragiona sull'**ontologia** di Fabric IQ sì.
 | [`docs/`](docs) | Idee chiave, guida al setup, script della demo e scelte di modellazione |
 | [`prompts/`](prompts) | Il prompt per farsi generare un'ontologia: modello generico ed esempio compilato |
 | [`tools/`](tools) | Script Python che generano ontologia e dati e verificano che la storia torni |
-| [`slides/`](slides) | Le slide della sessione |
+| [`slides/`](slides) | Le slide saranno pubblicate in PDF dopo WPC 2026 |
 
-**Download:** il kit pronto all'uso (ontologia, dati, notebook e guida) è nella pagina
-[Releases](https://github.com/anbened/WPC2026_FabricIQ/releases). In alternativa: **Code › Download ZIP**.
+Per scaricare insieme ontologia, dati, notebook e guida, scegli **Code › Download ZIP** su GitHub.
 
 ## Stato delle funzionalità
 
@@ -70,6 +70,9 @@ Al 22 novembre 2026. Lo stato cambia spesso: verifica sempre su
 - Diverse funzionalità sono in preview e possono cambiare.
 
 ## Licenza
+
+Andrea Benedetti ha curato la sessione e i materiali. Claude ha contribuito alla prima versione
+del repository e Codex alla revisione della demo e ai controlli automatici sui dati.
 
 - Codice (`tools/`, `notebooks/`): [MIT](LICENSE).
 - Documentazione, ontologia, dati e prompt: [CC BY 4.0](LICENSE-DOCS.md). Puoi riusarli e adattarli, anche

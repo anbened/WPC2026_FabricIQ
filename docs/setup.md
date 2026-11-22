@@ -5,18 +5,24 @@ un'ontologia collegata ai dati e due agenti da confrontare.
 
 ## Prerequisiti
 
-- Un workspace su una capacità Microsoft Fabric.
-- Nelle impostazioni del tenant, abilitate: **Users can create ontology (preview) items** e **Graph**.
-- I file di questo repository (pagina [Releases](https://github.com/anbened/WPC2026_FabricIQ/releases) oppure **Code › Download ZIP**).
+- Un workspace dove puoi creare gli item e leggere le sorgenti. Per i data agent serve una capacità
+  Fabric a pagamento F2 o superiore, oppure Power BI Premium P1 o superiore con Fabric abilitato.
+  [Prerequisiti del Fabric data agent](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-data-agent)
+- Nel tenant devono essere abilitate la creazione di item Fabric e Ontology (preview) e la funzionalità Graph.
+  Per i data agent verifica con l'amministratore anche le impostazioni di Copilot e Azure OpenAI,
+  incluse quelle di elaborazione e archiviazione fuori area quando richieste per la regione della capacità.
+  [Impostazioni del tenant per i data agent](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-tenant-settings)
+- I file di questo repository, scaricabili da GitHub con **Code › Download ZIP**.
 
 ## 1. Carica i dati
 
-1. Crea un lakehouse, per esempio `FourthCoffeeLH`.
+1. Crea un lakehouse dedicato alla demo, per esempio `FourthCoffeeLH`.
 2. In **Files** crea la cartella `fourth_coffee` e caricaci tutti i CSV della cartella [`data/`](../data).
    Devi ottenere `Files/fourth_coffee/stores.csv`, `Files/fourth_coffee/farms.csv` e così via.
 3. Importa nel workspace il notebook [`notebooks/load_tables.ipynb`](../notebooks/load_tables.ipynb),
-   collegalo al lakehouse come lakehouse di default ed eseguilo.
-   Crea 11 tabelle Delta gestite con i tipi corretti (date, numeri).
+   e collega il lakehouse della demo come predefinito. **Controlla il lakehouse selezionato prima di eseguire
+   il notebook.** Il caricamento crea 11 tabelle Delta gestite e sovrascrive dati e schema delle eventuali
+   tabelle omonime. Esegui il notebook e controlla i conteggi stampati confrontandoli con il [riepilogo dei CSV](../data/README.md).
 
 Si può usare anche **Load to Tables** su ogni CSV, ma i campi data restano stringhe: il notebook è più sicuro.
 Per avvicinarti allo scenario reale puoi caricare `machine_telemetry` in un **Eventhouse**: il binding
