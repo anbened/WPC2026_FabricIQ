@@ -28,7 +28,7 @@ python tools/verify.py data               # controlla binding, regola e storia
 | `spec.py` | Unica fonte di verità dell'ontologia: entità, proprietà, colonne sorgente, relazioni, descrizioni, sinonimi e testo della regola |
 | `build_ontology.py` | Legge `spec.py`, controlla i vincoli di Fabric sui nomi e scrive Turtle e RDF/XML, con una verifica di andata e ritorno |
 | `gen_data.py` | Genera i dati fittizi; la storia della demo è descritta in testa al file |
-| `verify.py` | Controlla che ogni colonna collegata esista, che le chiavi siano univoche, che le relazioni si risolvano, e applica la Fourth Hand Standard ai dati |
+| `verify.py` | Controlla i binding e applica la Fourth Hand Standard alla data di acquisto. Confronta lotti, consegne, reclami e telemetria con i risultati attesi in [La demo](../docs/demo.md) e termina con un errore se trova una discrepanza. |
 
 ## Adattare a un altro scenario
 

@@ -5,28 +5,26 @@ Prima completa il [setup](setup.md).
 
 ## I due agenti
 
-**Agente A**: Fabric data agent con sorgente **solo il lakehouse** `FourthCoffeeLH`, tutte le tabelle.
-Istruzioni:
+Crea due **Fabric data agent** nello stesso workspace.
 
-> Sei l'assistente qualità di Fourth Coffee. Rispondi in italiano usando i dati disponibili.
+- Per **A**, aggiungi il lakehouse `FourthCoffeeLH` e seleziona tutte le 11 tabelle.
+- Per **B**, aggiungi l'ontologia `FourthCoffee` e verifica che tra le sorgenti associate compaia
+  lo stesso lakehouse. I binding forniscono il contesto per interrogare i dati.
 
-**Agente B**: Fabric data agent con sorgente **l'ontologia** `FourthCoffee`. Istruzioni:
+Incolla le stesse istruzioni in entrambi e poni la domanda in una nuova conversazione per ciascuno.
 
-> Sei l'assistente qualità di Fourth Coffee. Rispondi in italiano. Per capire la causa di un problema in
-> negozio valuta prima la macchina (telemetria), poi il caffè risalendo la catena fino alla Farm.
-> Verifica sempre la Fourth Hand Standard alla data di acquisto del lotto. Cita gli identificativi
-> (lotti, farm, date) su cui basi la conclusione.
+> Sei l'assistente qualità di Fourth Coffee. Rispondi in italiano e cita i dati su cui basi la tua decisione.
 
 ## La domanda
 
 Non «il caffè era acido»: quello è un aneddoto. La domanda di business ha una decisione dentro:
 
-> *Ad Assago i reclami per caffè acido sono passati da 3 a 17 a settimana. È colpa delle macchine o del caffè?
+> *Tra il 7 settembre e il 1° novembre 2026 ad Assago i reclami per caffè acido sono passati da 3 a 17 a settimana. È colpa delle macchine o del caffè?
 > Devo mandare il tecnico o bloccare il caffè?*
 
 Domande di approfondimento:
 
-1. *Da quale lotto di caffè verde viene il caffè consegnato ad Assago nelle ultime tre settimane?*
+1. *Da quale lotto di caffè verde viene il caffè consegnato ad Assago dal 12 ottobre al 1° novembre 2026 inclusi?*
 2. *Quel lotto rispetta la Fourth Hand Standard?*
 3. *Ci sono altri lotti della stessa farm ancora in magazzino?*
 4. *Quel lotto è arrivato anche in altri negozi? Cosa dicono i reclami lì?*
@@ -35,7 +33,7 @@ Domande di approfondimento:
 
 Le settimane vanno da S1 (dal 7 settembre 2026) a S8; S6 inizia il 12 ottobre.
 
-- **Le macchine sono a posto.** `EQ-S003-01` ed `EQ-S003-02` restano tra 8,6 e 9,4 bar di pressione e sopra
+- **La telemetria è nella norma.** `EQ-S003-01` ed `EQ-S003-02` restano tra 8,6 e 9,4 bar di pressione e sopra
   i 91 °C di caldaia per tutto il periodo.
 - **I reclami «Gusto acido» ad Assago** per settimana: 3, 2, 4, 3, 3, **9, 14, 17**.
 - **La catena.** Da S6 Assago riceve caffè del lotto verde `GL-2026-037`: tostature `RB-1013`, `RB-1015`,
@@ -49,12 +47,22 @@ Le settimane vanno da S1 (dal 7 settembre 2026) a S8; S6 inizia il 12 ottobre.
 - **L'azione.** `GL-2026-039`, acquistato il 22 ottobre con il 60% di caffè di `F005`, è ancora in magazzino
   (`InStock`): va messo in attesa.
 
-Il punto da far notare non è se l'agente trova `F005`, ma se applica la regola **alla data giusta**:
-un agente che conclude «la farm è sospesa, quindi tutti i suoi lotti sono non conformi» sbaglia su `GL-2026-033`.
+La decisione da comunicare al responsabile qualità è mettere in attesa `GL-2026-039` per la violazione
+accertata e verificare il caffè di `GL-2026-037` nei negozi che lo hanno ricevuto. Consegne, reclami e
+telemetria indicano il caffè come causa più plausibile. Ogni reclamo identifica il negozio, mentre la
+busta usata per quella tazza resta sconosciuta. Le letture di Assago non indicano un intervento tecnico.
+
+Confronta come A e B motivano il diverso esito di `033` e `037` e quali dati citano. Dopo aver raccolto
+entrambe le risposte, puoi proporre a entrambi un secondo giro guidato:
+
+> Controlla la telemetria, risali dal negozio alle farm e verifica la Fourth Hand Standard alla data di
+> acquisto di ogni lotto. Quali identificativi e date giustificano la tua decisione?
 
 ## Senza dati: cosa sa l'ontologia da sola
 
-Anche prima dei binding, l'agente dell'ontologia ragiona sul modello. Domande utili per mostrarlo:
+Per questa parte apri l'item **Ontology** `FourthCoffee` e avvia il suo **Ontology agent**. Puoi
+provare queste domande anche subito dopo l'import, prima di configurare i binding. Per l'esercizio
+su `WorkOrder` usa la modalità **Plan** per visualizzare la proposta.
 
 | Domanda | Cosa mostra |
 |---|---|
@@ -62,7 +70,7 @@ Anche prima dei binding, l'agente dell'ontologia ragiona sul modello. Domande ut
 | *Come risalgo da un punto vendita alla farm che ha prodotto il caffè?* | I sinonimi («punto vendita» = Store) e il percorso nel grafo |
 | *Ad Assago il caffè è acido. Quali sono le possibili cause e quali dati dovrei controllare per ciascuna?* | Il ragionamento diagnostico: soglie della macchina e regola sui lotti vengono dalle descrizioni |
 | *Cosa significa che un lotto è conforme alla Fourth Hand Standard?* | La regola vive nel modello, non in una tabella |
-| *Quale lotto è arrivato ad Assago la settimana scorsa?* | Il limite: l'ontologia non contiene dati, li collega |
+| *Quale lotto è arrivato ad Assago dal 26 ottobre al 1° novembre 2026?* | Prima dei binding l'agente può spiegare il percorso, ma per identificare il lotto servono i dati delle consegne |
 | *Aggiungi un entity type WorkOrder collegato a Equipment* | Il modello a proposta: l'agente propone, una persona approva |
 
 Un esercizio utile: confronta la risposta alla domanda sulle cause con le descrizioni nel file
