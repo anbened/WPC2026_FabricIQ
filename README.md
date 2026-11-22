@@ -71,6 +71,9 @@ Al 22 novembre 2026. Lo stato cambia spesso: verifica sempre su
 
 ## Licenza
 
+Andrea Benedetti ha curato la sessione e i materiali. Claude ha contribuito alla prima versione
+del repository e Codex alla revisione della demo e ai controlli automatici sui dati.
+
 - Codice (`tools/`, `notebooks/`): [MIT](LICENSE).
 - Documentazione, ontologia, dati e prompt: [CC BY 4.0](LICENSE-DOCS.md). Puoi riusarli e adattarli, anche
   per uso commerciale, citando la fonte.
