@@ -1,0 +1,8 @@
+CertificationId,FarmId,CertScheme,CertStatus,ValidFrom,ValidTo,SuspendedFrom,SuspensionReason,LastAuditDate,LastAuditOutcome
+CERT-F001-2025,F001,Fourth Hand Standard - Quality & Ethics Audit,Active,2025-07-01,2027-06-30,,,2026-06-10,Passed
+CERT-F002-2025,F002,Fourth Hand Standard - Quality & Ethics Audit,Active,2025-07-01,2027-06-30,,,2026-06-19,Passed
+CERT-F003-2025,F003,Fourth Hand Standard - Quality & Ethics Audit,Active,2025-07-01,2027-06-30,,,2026-06-28,Passed
+CERT-F004-2025,F004,Fourth Hand Standard - Quality & Ethics Audit,Active,2025-07-01,2027-06-30,,,2026-07-07,Passed
+CERT-F005-2025,F005,Fourth Hand Standard - Quality & Ethics Audit,Suspended,2025-07-01,2027-06-30,2026-09-28,Audit qualità non superato: difetti di fermentazione (sour beans oltre soglia),2026-09-25,Failed
+CERT-F006-2025,F006,Fourth Hand Standard - Quality & Ethics Audit,Active,2025-07-01,2027-06-30,,,2026-07-25,Passed
+CERT-F004-2023,F004,Fourth Hand Standard - Quality & Ethics Audit,Expired,2023-07-01,2025-06-30,,,2024-06-12,Passed

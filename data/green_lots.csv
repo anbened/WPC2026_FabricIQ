@@ -1,0 +1,10 @@
+GreenLotId,PurchaseDate,Processor,WeightKg,CuppingScore,MoisturePct,WarehouseStatus
+GL-2026-031,2026-07-15,Beneficio Sul de Minas,6000,85.0,10.9,Roasted
+GL-2026-032,2026-07-28,Beneficio Huila Norte,6000,84.5,11.0,Roasted
+GL-2026-033,2026-08-20,Beneficio Copán,6000,84.0,11.2,Roasted
+GL-2026-034,2026-09-02,Sidama Washing Station 4,6000,86.0,10.8,Roasted
+GL-2026-035,2026-09-15,Beneficio Huila Norte,6000,85.5,10.9,Roasted
+GL-2026-036,2026-09-30,Sidama Washing Station 4,6000,85.5,11.0,Roasted
+GL-2026-037,2026-10-05,Beneficio Copán,6000,80.5,12.6,Roasted
+GL-2026-038,2026-10-14,Beneficio Huehuetenango,6000,85.0,11.0,Roasted
+GL-2026-039,2026-10-22,Beneficio Copán,6000,81.0,12.4,InStock

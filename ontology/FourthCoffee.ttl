@@ -1,0 +1,526 @@
+# Fourth Coffee - ontologia per la demo Fabric IQ (WPC 2026)
+# Importare in un item Ontology (preview) VUOTO: Home > Import ontology.
+# Chiavi, data binding e regole non fanno parte dello standard RDF: vanno configurati dopo l'import (vedi docs/setup.md).
+
+@prefix fc: <https://fourthcoffee.example/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+fc: a owl:Ontology ;
+    rdfs:label "FourthCoffee" ;
+    rdfs:comment "Ontologia di Fourth Coffee: la catena che porta il caffè dalla farm alla tazzina (Farm -> GreenLot -> RoastBatch -> PackagingRun -> Shipment -> Store), le macchine installate nei negozi e i reclami dei clienti. Fourth Hand Standard: Fourth Coffee acquista caffè verde solo da produttori in regola il giorno dell'acquisto. Un GreenLot è conforme solo se OGNI Farm che lo rifornisce (relazione supplies), qualunque sia la sua quota, alla data PurchaseDate del lotto aveva una Certification con ValidFrom <= PurchaseDate <= ValidTo e con SuspendedFrom vuoto oppure successivo a PurchaseDate. Basta una sola Farm non in regola per rendere non conforme l'intero lotto. Una sospensione non rende non conformi i lotti acquistati prima della data di sospensione. Le certificazioni vengono sospese quando l'audit qualità non è superato (per esempio difetti di fermentazione del caffè verde, che danno un gusto acido in tazza). I lotti non conformi ancora in magazzino (WarehouseStatus = InStock) vanno messi in attesa e segnalati al team sourcing." .
+
+fc:Certification_CertScheme a owl:DatatypeProperty ;
+    rdfs:label "CertScheme" ;
+    rdfs:comment "Schema di certificazione e audit applicato." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:string ;
+    skos:altLabel "schema" .
+
+fc:Certification_CertStatus a owl:DatatypeProperty ;
+    rdfs:label "CertStatus" ;
+    rdfs:comment "Stato attuale: Active, Suspended o Expired." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:string ;
+    skos:altLabel "stato certificazione" .
+
+fc:Certification_CertificationId a owl:DatatypeProperty ;
+    rdfs:label "CertificationId" ;
+    rdfs:comment "Codice univoco della certificazione." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:string .
+
+fc:Certification_LastAuditDate a owl:DatatypeProperty ;
+    rdfs:label "LastAuditDate" ;
+    rdfs:comment "Data dell'ultimo audit qualità." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data ultimo audit" .
+
+fc:Certification_LastAuditOutcome a owl:DatatypeProperty ;
+    rdfs:label "LastAuditOutcome" ;
+    rdfs:comment "Esito dell'ultimo audit: Passed o Failed." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:string ;
+    skos:altLabel "esito audit" .
+
+fc:Certification_SuspendedFrom a owl:DatatypeProperty ;
+    rdfs:label "SuspendedFrom" ;
+    rdfs:comment "Data da cui la certificazione è sospesa. Vuota se mai sospesa." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data sospensione",
+        "sospesa dal" .
+
+fc:Certification_SuspensionReason a owl:DatatypeProperty ;
+    rdfs:label "SuspensionReason" ;
+    rdfs:comment "Motivo della sospensione." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:string ;
+    skos:altLabel "motivo sospensione" .
+
+fc:Certification_ValidFrom a owl:DatatypeProperty ;
+    rdfs:label "ValidFrom" ;
+    rdfs:comment "Inizio validità della certificazione." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "valida dal" .
+
+fc:Certification_ValidTo a owl:DatatypeProperty ;
+    rdfs:label "ValidTo" ;
+    rdfs:comment "Fine validità della certificazione." ;
+    rdfs:domain fc:Certification ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "scadenza",
+        "valida fino al" .
+
+fc:Complaint_Channel a owl:DatatypeProperty ;
+    rdfs:label "Channel" ;
+    rdfs:comment "Canale: App, Cassa o Web." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range xsd:string ;
+    skos:altLabel "canale" .
+
+fc:Complaint_ComplaintCategory a owl:DatatypeProperty ;
+    rdfs:label "ComplaintCategory" ;
+    rdfs:comment "Categoria del reclamo." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range xsd:string ;
+    skos:altLabel "motivo reclamo",
+        "tipo reclamo" .
+
+fc:Complaint_ComplaintDate a owl:DatatypeProperty ;
+    rdfs:label "ComplaintDate" ;
+    rdfs:comment "Data del reclamo." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data reclamo" .
+
+fc:Complaint_ComplaintId a owl:DatatypeProperty ;
+    rdfs:label "ComplaintId" ;
+    rdfs:comment "Codice univoco del reclamo." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range xsd:string .
+
+fc:Complaint_ComplaintText a owl:DatatypeProperty ;
+    rdfs:label "ComplaintText" ;
+    rdfs:comment "Testo del reclamo." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range xsd:string ;
+    skos:altLabel "testo" .
+
+fc:Complaint_reportedAt_Store a owl:ObjectProperty ;
+    rdfs:label "reportedAt" ;
+    rdfs:comment "Il reclamo è stato fatto in questo Store." ;
+    rdfs:domain fc:Complaint ;
+    rdfs:range fc:Store ;
+    skos:altLabel "ricevuto da",
+        "segnalato in" .
+
+fc:Equipment_AssetId a owl:DatatypeProperty ;
+    rdfs:label "AssetId" ;
+    rdfs:comment "Codice univoco della macchina." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice macchina",
+        "matricola" .
+
+fc:Equipment_BoilerTempC a owl:DatatypeProperty ;
+    rdfs:label "BoilerTempC" ;
+    rdfs:comment "Temperatura della caldaia in °C (time series). Normale: 90-96 °C." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range xsd:double ;
+    skos:altLabel "temperatura acqua",
+        "temperatura caldaia" .
+
+fc:Equipment_EquipmentModel a owl:DatatypeProperty ;
+    rdfs:label "EquipmentModel" ;
+    rdfs:comment "Modello della macchina." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range xsd:string ;
+    skos:altLabel "modello" .
+
+fc:Equipment_InstallDate a owl:DatatypeProperty ;
+    rdfs:label "InstallDate" ;
+    rdfs:comment "Data di installazione." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data installazione" .
+
+fc:Equipment_PumpPressureBar a owl:DatatypeProperty ;
+    rdfs:label "PumpPressureBar" ;
+    rdfs:comment "Pressione della pompa in bar (time series). Normale: 8,5-9,5 bar." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range xsd:double ;
+    skos:altLabel "pressione",
+        "pressione pompa" .
+
+fc:Equipment_installedAt_Store a owl:ObjectProperty ;
+    rdfs:label "installedAt" ;
+    rdfs:comment "La macchina è installata in questo Store (store_id = StoreId)." ;
+    rdfs:domain fc:Equipment ;
+    rdfs:range fc:Store ;
+    skos:altLabel "installata in",
+        "si trova in" .
+
+fc:Farm_AltitudeM a owl:DatatypeProperty ;
+    rdfs:label "AltitudeM" ;
+    rdfs:comment "Altitudine della piantagione in metri." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "altitudine" .
+
+fc:Farm_FarmCountry a owl:DatatypeProperty ;
+    rdfs:label "FarmCountry" ;
+    rdfs:comment "Paese di origine del caffè." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range xsd:string ;
+    skos:altLabel "origine",
+        "paese di origine" .
+
+fc:Farm_FarmId a owl:DatatypeProperty ;
+    rdfs:label "FarmId" ;
+    rdfs:comment "Codice univoco del produttore." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice farm",
+        "codice produttore" .
+
+fc:Farm_FarmName a owl:DatatypeProperty ;
+    rdfs:label "FarmName" ;
+    rdfs:comment "Nome del produttore." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range xsd:string ;
+    skos:altLabel "nome farm",
+        "nome produttore" .
+
+fc:Farm_FarmRegion a owl:DatatypeProperty ;
+    rdfs:label "FarmRegion" ;
+    rdfs:comment "Regione di coltivazione." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range xsd:string ;
+    skos:altLabel "regione di origine" .
+
+fc:Farm_holdsCertification_Certification a owl:ObjectProperty ;
+    rdfs:label "holdsCertification" ;
+    rdfs:comment "La Farm possiede questa Certification." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range fc:Certification ;
+    skos:altLabel "certificata da",
+        "ha certificazione" .
+
+fc:Farm_supplies_GreenLot a owl:ObjectProperty ;
+    rdfs:label "supplies" ;
+    rdfs:comment "La Farm rifornisce il GreenLot (molti-a-molti: un lotto mescola più farm; la quota è SharePct in green_lot_farms)." ;
+    rdfs:domain fc:Farm ;
+    rdfs:range fc:GreenLot ;
+    skos:altLabel "contiene caffè di",
+        "fornisce",
+        "rifornisce" .
+
+fc:GreenLot_CuppingScore a owl:DatatypeProperty ;
+    rdfs:label "CuppingScore" ;
+    rdfs:comment "Punteggio qualitativo all'assaggio in ingresso (scala SCA, 0-100)." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:double ;
+    skos:altLabel "punteggio cupping",
+        "punteggio qualità" .
+
+fc:GreenLot_GreenLotId a owl:DatatypeProperty ;
+    rdfs:label "GreenLotId" ;
+    rdfs:comment "Codice univoco del lotto di caffè verde." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice lotto verde" .
+
+fc:GreenLot_GreenWeightKg a owl:DatatypeProperty ;
+    rdfs:label "GreenWeightKg" ;
+    rdfs:comment "Peso del lotto in kg." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:double ;
+    skos:altLabel "peso lotto" .
+
+fc:GreenLot_MoisturePct a owl:DatatypeProperty ;
+    rdfs:label "MoisturePct" ;
+    rdfs:comment "Umidità del caffè verde in percentuale." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:double ;
+    skos:altLabel "umidità" .
+
+fc:GreenLot_Processor a owl:DatatypeProperty ;
+    rdfs:label "Processor" ;
+    rdfs:comment "Il processor (seconda mano) che ha lavorato i chicchi." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:string ;
+    skos:altLabel "beneficio",
+        "lavoratore",
+        "processor" .
+
+fc:GreenLot_PurchaseDate a owl:DatatypeProperty ;
+    rdfs:label "PurchaseDate" ;
+    rdfs:comment "Data di acquisto del lotto: è la data rispetto a cui si verifica la Fourth Hand Standard." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data acquisto",
+        "data di acquisto" .
+
+fc:GreenLot_WarehouseStatus a owl:DatatypeProperty ;
+    rdfs:label "WarehouseStatus" ;
+    rdfs:comment "Stato in magazzino: InStock (non ancora tostato), Roasted (già tostato) o OnHold (in attesa)." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range xsd:string ;
+    skos:altLabel "stato magazzino" .
+
+fc:GreenLot_roastedInto_RoastBatch a owl:ObjectProperty ;
+    rdfs:label "roastedInto" ;
+    rdfs:comment "Il GreenLot è stato tostato in questo RoastBatch." ;
+    rdfs:domain fc:GreenLot ;
+    rdfs:range fc:RoastBatch ;
+    skos:altLabel "tostato in" .
+
+fc:PackagingRun_BagsProduced a owl:DatatypeProperty ;
+    rdfs:label "BagsProduced" ;
+    rdfs:comment "Numero di buste da 1 kg prodotte." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "buste prodotte" .
+
+fc:PackagingRun_BestBefore a owl:DatatypeProperty ;
+    rdfs:label "BestBefore" ;
+    rdfs:comment "Data di scadenza consigliata." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "da consumarsi preferibilmente entro" .
+
+fc:PackagingRun_PackagingDate a owl:DatatypeProperty ;
+    rdfs:label "PackagingDate" ;
+    rdfs:comment "Data del confezionamento." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data confezionamento" .
+
+fc:PackagingRun_PackagingLine a owl:DatatypeProperty ;
+    rdfs:label "PackagingLine" ;
+    rdfs:comment "Linea di confezionamento." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range xsd:string ;
+    skos:altLabel "linea" .
+
+fc:PackagingRun_PackagingRunId a owl:DatatypeProperty ;
+    rdfs:label "PackagingRunId" ;
+    rdfs:comment "Codice univoco del ciclo di confezionamento." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice confezionamento" .
+
+fc:PackagingRun_shippedWith_Shipment a owl:ObjectProperty ;
+    rdfs:label "shippedWith" ;
+    rdfs:comment "Il PackagingRun è stato spedito con questa Shipment." ;
+    rdfs:domain fc:PackagingRun ;
+    rdfs:range fc:Shipment ;
+    skos:altLabel "spedito con" .
+
+fc:RoastBatch_RoastBatchId a owl:DatatypeProperty ;
+    rdfs:label "RoastBatchId" ;
+    rdfs:comment "Codice univoco della tostatura." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice tostatura" .
+
+fc:RoastBatch_RoastDate a owl:DatatypeProperty ;
+    rdfs:label "RoastDate" ;
+    rdfs:comment "Data della tostatura." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data tostatura" .
+
+fc:RoastBatch_RoastPlant a owl:DatatypeProperty ;
+    rdfs:label "RoastPlant" ;
+    rdfs:comment "Impianto di torrefazione." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range xsd:string ;
+    skos:altLabel "impianto",
+        "torrefazione" .
+
+fc:RoastBatch_RoastProfile a owl:DatatypeProperty ;
+    rdfs:label "RoastProfile" ;
+    rdfs:comment "Profilo di tostatura." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range xsd:string ;
+    skos:altLabel "profilo tostatura" .
+
+fc:RoastBatch_RoastWeightKg a owl:DatatypeProperty ;
+    rdfs:label "RoastWeightKg" ;
+    rdfs:comment "Peso del caffè tostato in kg." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range xsd:double .
+
+fc:RoastBatch_packedInto_PackagingRun a owl:ObjectProperty ;
+    rdfs:label "packedInto" ;
+    rdfs:comment "Il RoastBatch è stato confezionato in questo PackagingRun." ;
+    rdfs:domain fc:RoastBatch ;
+    rdfs:range fc:PackagingRun ;
+    skos:altLabel "confezionato in" .
+
+fc:Shipment_BagsShipped a owl:DatatypeProperty ;
+    rdfs:label "BagsShipped" ;
+    rdfs:comment "Numero di buste spedite." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "buste spedite" .
+
+fc:Shipment_Carrier a owl:DatatypeProperty ;
+    rdfs:label "Carrier" ;
+    rdfs:comment "Corriere." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range xsd:string ;
+    skos:altLabel "corriere",
+        "vettore" .
+
+fc:Shipment_DeliveryDate a owl:DatatypeProperty ;
+    rdfs:label "DeliveryDate" ;
+    rdfs:comment "Data di consegna al negozio." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data arrivo",
+        "data consegna" .
+
+fc:Shipment_ShipDate a owl:DatatypeProperty ;
+    rdfs:label "ShipDate" ;
+    rdfs:comment "Data di partenza della spedizione." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data spedizione" .
+
+fc:Shipment_ShipmentId a owl:DatatypeProperty ;
+    rdfs:label "ShipmentId" ;
+    rdfs:comment "Codice univoco della spedizione." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice spedizione" .
+
+fc:Shipment_deliveredTo_Store a owl:ObjectProperty ;
+    rdfs:label "deliveredTo" ;
+    rdfs:comment "La Shipment è stata consegnata a questo Store (destination_id = StoreId)." ;
+    rdfs:domain fc:Shipment ;
+    rdfs:range fc:Store ;
+    skos:altLabel "consegnata a",
+        "destinazione" .
+
+fc:Store_City a owl:DatatypeProperty ;
+    rdfs:label "City" ;
+    rdfs:comment "Città del negozio." ;
+    rdfs:domain fc:Store ;
+    rdfs:range xsd:string ;
+    skos:altLabel "città",
+        "comune" .
+
+fc:Store_OpenedOn a owl:DatatypeProperty ;
+    rdfs:label "OpenedOn" ;
+    rdfs:comment "Data di apertura." ;
+    rdfs:domain fc:Store ;
+    rdfs:range xsd:dateTime ;
+    skos:altLabel "data apertura" .
+
+fc:Store_StoreFormat a owl:DatatypeProperty ;
+    rdfs:label "StoreFormat" ;
+    rdfs:comment "Formato: Bar, Drive-through o Kiosk." ;
+    rdfs:domain fc:Store ;
+    rdfs:range xsd:string ;
+    skos:altLabel "formato" .
+
+fc:Store_StoreId a owl:DatatypeProperty ;
+    rdfs:label "StoreId" ;
+    rdfs:comment "Codice univoco del negozio (es. S003)." ;
+    rdfs:domain fc:Store ;
+    rdfs:range xsd:string ;
+    skos:altLabel "codice negozio" .
+
+fc:Store_StoreName a owl:DatatypeProperty ;
+    rdfs:label "StoreName" ;
+    rdfs:comment "Nome del negozio." ;
+    rdfs:domain fc:Store ;
+    rdfs:range xsd:string ;
+    skos:altLabel "nome negozio" .
+
+fc:Complaint a owl:Class ;
+    rdfs:label "Complaint" ;
+    rdfs:comment "Un reclamo di un cliente in un negozio. ComplaintCategory distingue per esempio «Gusto acido», «Gusto amaro», «Temperatura», «Servizio lento», «Errore ordine»." ;
+    skos:altLabel "feedback negativo",
+        "lamentela",
+        "reclamo",
+        "segnalazione cliente" .
+
+fc:Equipment a owl:Class ;
+    rdfs:label "Equipment" ;
+    rdfs:comment "Una macchina espresso installata in un negozio. Ha due proprietà time series dalla telemetria: PumpPressureBar (normale tra 8,5 e 9,5 bar; sotto 8,5 bar l'espresso è sottoestratto e risulta acido) e BoilerTempC (normale tra 90 e 96 °C; sotto 90 °C il caffè risulta acido)." ;
+    skos:altLabel "asset",
+        "attrezzatura",
+        "macchina",
+        "macchina del caffè",
+        "macchina espresso" .
+
+fc:Farm a owl:Class ;
+    rdfs:label "Farm" ;
+    rdfs:comment "Il produttore (farmer) che coltiva il caffè: la prima delle quattro mani. Un GreenLot può contenere caffè di più Farm. Per sapere se una Farm era in regola a una certa data si guardano le sue Certification (relazione holdsCertification). Fourth Hand Standard: Fourth Coffee acquista caffè verde solo da produttori in regola il giorno dell'acquisto. Un GreenLot è conforme solo se OGNI Farm che lo rifornisce (relazione supplies), qualunque sia la sua quota, alla data PurchaseDate del lotto aveva una Certification con ValidFrom <= PurchaseDate <= ValidTo e con SuspendedFrom vuoto oppure successivo a PurchaseDate. Basta una sola Farm non in regola per rendere non conforme l'intero lotto. Una sospensione non rende non conformi i lotti acquistati prima della data di sospensione. Le certificazioni vengono sospese quando l'audit qualità non è superato (per esempio difetti di fermentazione del caffè verde, che danno un gusto acido in tazza). I lotti non conformi ancora in magazzino (WarehouseStatus = InStock) vanno messi in attesa e segnalati al team sourcing." ;
+    skos:altLabel "coltivatore",
+        "farmer",
+        "fattoria",
+        "finca",
+        "piantagione",
+        "produttore" .
+
+fc:PackagingRun a owl:Class ;
+    rdfs:label "PackagingRun" ;
+    rdfs:comment "Un ciclo di confezionamento: è il «lotto» nel linguaggio della logistica, quello stampato sulla busta. Ogni PackagingRun confeziona caffè di un solo RoastBatch." ;
+    skos:altLabel "confezionamento",
+        "lotto busta",
+        "lotto di confezionamento",
+        "packaging run" .
+
+fc:RoastBatch a owl:Class ;
+    rdfs:label "RoastBatch" ;
+    rdfs:comment "Una singola tostatura in impianto (il roaster, terza mano): è il «lotto» nel linguaggio della torrefazione. Ogni RoastBatch usa caffè di un solo GreenLot." ;
+    skos:altLabel "cotta",
+        "lotto di tostatura",
+        "roast batch",
+        "tostatura" .
+
+fc:Shipment a owl:Class ;
+    rdfs:label "Shipment" ;
+    rdfs:comment "Una spedizione di caffè confezionato verso un negozio. Nel sistema della supply chain il negozio di destinazione si chiama destination_id ed è lo stesso codice di StoreId." ;
+    skos:altLabel "DDT",
+        "consegna",
+        "invio",
+        "spedizione" .
+
+fc:Store a owl:Class ;
+    rdfs:label "Store" ;
+    rdfs:comment "Un punto vendita Fourth Coffee (la quarta mano: il cliente beve qui). Lo stesso negozio si chiama StoreId nell'anagrafica, store_id nel registro dispositivi e destination_id nelle spedizioni: sono lo stesso codice." ;
+    skos:altLabel "bar",
+        "caffetteria",
+        "drive-through",
+        "negozio",
+        "outlet",
+        "punto vendita",
+        "store" .
+
+fc:GreenLot a owl:Class ;
+    rdfs:label "GreenLot" ;
+    rdfs:comment "Lotto di caffè verde (non tostato) acquistato da Fourth Coffee: è il «lotto» nel linguaggio del sourcing. Mescola chicchi di una o più Farm (relazione supplies, con quota percentuale nella tabella green_lot_farms). Non confonderlo con RoastBatch (lotto di tostatura) né con PackagingRun (lotto di confezionamento). Quando qualcuno chiede «da quale lotto viene il caffè» riferendosi all'origine, intende il GreenLot. Fourth Hand Standard: Fourth Coffee acquista caffè verde solo da produttori in regola il giorno dell'acquisto. Un GreenLot è conforme solo se OGNI Farm che lo rifornisce (relazione supplies), qualunque sia la sua quota, alla data PurchaseDate del lotto aveva una Certification con ValidFrom <= PurchaseDate <= ValidTo e con SuspendedFrom vuoto oppure successivo a PurchaseDate. Basta una sola Farm non in regola per rendere non conforme l'intero lotto. Una sospensione non rende non conformi i lotti acquistati prima della data di sospensione. Le certificazioni vengono sospese quando l'audit qualità non è superato (per esempio difetti di fermentazione del caffè verde, che danno un gusto acido in tazza). I lotti non conformi ancora in magazzino (WarehouseStatus = InStock) vanno messi in attesa e segnalati al team sourcing." ;
+    skos:altLabel "green lot",
+        "lotto di acquisto",
+        "lotto di caffè verde",
+        "lotto verde",
+        "partita di caffè verde" .
+
+fc:Certification a owl:Class ;
+    rdfs:label "Certification" ;
+    rdfs:comment "Certificazione e audit di una Farm secondo la Fourth Hand Standard. Una Farm è in regola alla data D se ha una Certification con ValidFrom <= D <= ValidTo e SuspendedFrom vuoto oppure successivo a D. CertStatus è lo stato ATTUALE, non lo stato a una data passata: per verificare la conformità a una data usare sempre ValidFrom, ValidTo e SuspendedFrom." ;
+    skos:altLabel "audit",
+        "certificato",
+        "certificazione",
+        "stato di conformità" .
+

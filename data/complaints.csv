@@ -1,0 +1,240 @@
+ComplaintId,StoreId,ComplaintDate,ComplaintCategory,ComplaintText,Channel
+CMP-00004,S001,2026-09-07,Errore ordine,Mi hanno dato un americano,Web
+CMP-00005,S001,2026-09-07,Temperatura,Caffè tiepido,Web
+CMP-00040,S002,2026-09-07,Servizio lento,Servizio lento al drive,Web
+CMP-00214,S006,2026-09-07,Temperatura,Cappuccino freddo,App
+CMP-00002,S001,2026-09-08,Servizio lento,Servizio lento al drive,App
+CMP-00074,S003,2026-09-09,Temperatura,Cappuccino freddo,Web
+CMP-00151,S004,2026-09-09,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00152,S004,2026-09-09,Temperatura,Caffè tiepido,App
+CMP-00180,S005,2026-09-09,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00003,S001,2026-09-10,Errore ordine,Ordine sbagliato in app,App
+CMP-00071,S003,2026-09-10,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00075,S003,2026-09-10,Temperatura,Caffè tiepido,App
+CMP-00181,S005,2026-09-10,Temperatura,Caffè tiepido,Cassa
+CMP-00212,S006,2026-09-10,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00213,S006,2026-09-10,Gusto acido,Sapore acido e strano,Cassa
+CMP-00073,S003,2026-09-11,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00149,S004,2026-09-11,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00001,S001,2026-09-12,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00072,S003,2026-09-12,Gusto acido,Caffè con un retrogusto fermentato,Web
+CMP-00215,S006,2026-09-12,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00038,S002,2026-09-13,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00039,S002,2026-09-13,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00150,S004,2026-09-13,Servizio lento,Servizio lento al drive,Cassa
+CMP-00153,S004,2026-09-13,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00009,S001,2026-09-14,Servizio lento,Servizio lento al drive,App
+CMP-00184,S005,2026-09-14,Gusto amaro,Caffè troppo amaro,App
+CMP-00042,S002,2026-09-15,Temperatura,Cappuccino freddo,App
+CMP-00077,S003,2026-09-15,Gusto acido,"Gusto acido, l'ho lasciato",App
+CMP-00079,S003,2026-09-15,Servizio lento,Servizio lento al drive,App
+CMP-00182,S005,2026-09-15,Gusto acido,Sapore acido e strano,Cassa
+CMP-00010,S001,2026-09-16,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00041,S002,2026-09-16,Errore ordine,Ordine sbagliato in app,Web
+CMP-00076,S003,2026-09-16,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00080,S003,2026-09-16,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00081,S003,2026-09-16,Errore ordine,Ordine sbagliato in app,Web
+CMP-00154,S004,2026-09-16,Gusto amaro,Espresso bruciato,Web
+CMP-00185,S005,2026-09-16,Servizio lento,Attesa lunga in coda,App
+CMP-00219,S006,2026-09-16,Servizio lento,Servizio lento al drive,Web
+CMP-00006,S001,2026-09-17,Gusto acido,Sapore acido e strano,Cassa
+CMP-00008,S001,2026-09-17,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00220,S006,2026-09-17,Temperatura,Caffè tiepido,Web
+CMP-00183,S005,2026-09-18,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00216,S006,2026-09-18,Gusto acido,Sapore acido e strano,App
+CMP-00217,S006,2026-09-18,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00218,S006,2026-09-18,Servizio lento,Servizio lento al drive,App
+CMP-00007,S001,2026-09-20,Servizio lento,Servizio lento al drive,Cassa
+CMP-00043,S002,2026-09-20,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00078,S003,2026-09-20,Temperatura,Caffè tiepido,Web
+CMP-00155,S004,2026-09-20,Errore ordine,Ordine sbagliato in app,App
+CMP-00086,S003,2026-09-22,Temperatura,Cappuccino freddo,App
+CMP-00159,S004,2026-09-22,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00188,S005,2026-09-22,Temperatura,Caffè tiepido,Web
+CMP-00189,S005,2026-09-22,Temperatura,Caffè tiepido,App
+CMP-00191,S005,2026-09-22,Gusto amaro,Caffè troppo amaro,Web
+CMP-00012,S001,2026-09-23,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00013,S001,2026-09-23,Servizio lento,Attesa lunga in coda,App
+CMP-00157,S004,2026-09-23,Gusto amaro,Caffè troppo amaro,App
+CMP-00190,S005,2026-09-23,Temperatura,Cappuccino freddo,Cassa
+CMP-00011,S001,2026-09-24,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00083,S003,2026-09-24,Gusto acido,Caffè con un retrogusto fermentato,App
+CMP-00084,S003,2026-09-24,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00186,S005,2026-09-24,Gusto acido,Caffè con un retrogusto fermentato,App
+CMP-00044,S002,2026-09-25,Gusto acido,Sapore acido e strano,Web
+CMP-00045,S002,2026-09-25,Gusto amaro,Caffè troppo amaro,App
+CMP-00221,S006,2026-09-25,Gusto acido,Sapore acido e strano,Web
+CMP-00085,S003,2026-09-26,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00158,S004,2026-09-26,Temperatura,Cappuccino freddo,Web
+CMP-00187,S005,2026-09-26,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00223,S006,2026-09-26,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00082,S003,2026-09-27,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00156,S004,2026-09-27,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00222,S006,2026-09-27,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00225,S006,2026-09-28,Temperatura,Caffè tiepido,Web
+CMP-00018,S001,2026-09-29,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00089,S003,2026-09-29,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00160,S004,2026-09-29,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00226,S006,2026-09-29,Gusto amaro,Espresso bruciato,Cassa
+CMP-00046,S002,2026-09-30,Gusto acido,Caffè con un retrogusto fermentato,Cassa
+CMP-00087,S003,2026-09-30,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00192,S005,2026-09-30,Gusto acido,Sapore acido e strano,App
+CMP-00194,S005,2026-09-30,Servizio lento,Attesa lunga in coda,App
+CMP-00014,S001,2026-10-01,Gusto acido,Sapore acido e strano,Cassa
+CMP-00017,S001,2026-10-01,Errore ordine,Ordine sbagliato in app,App
+CMP-00161,S004,2026-10-01,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00162,S004,2026-10-01,Servizio lento,Servizio lento al drive,Web
+CMP-00195,S005,2026-10-02,Temperatura,Caffè tiepido,Cassa
+CMP-00224,S006,2026-10-02,Gusto amaro,Espresso bruciato,Web
+CMP-00016,S001,2026-10-03,Temperatura,Caffè tiepido,App
+CMP-00047,S002,2026-10-03,Temperatura,Caffè tiepido,App
+CMP-00088,S003,2026-10-03,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00090,S003,2026-10-03,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00163,S004,2026-10-03,Temperatura,Caffè tiepido,Web
+CMP-00227,S006,2026-10-03,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00015,S001,2026-10-04,Gusto amaro,Caffè troppo amaro,App
+CMP-00193,S005,2026-10-04,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00021,S001,2026-10-05,Servizio lento,Attesa lunga in coda,Web
+CMP-00166,S004,2026-10-05,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00167,S004,2026-10-05,Servizio lento,Attesa lunga in coda,Web
+CMP-00164,S004,2026-10-06,Gusto acido,"Espresso acido, quasi aceto",App
+CMP-00198,S005,2026-10-06,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00201,S005,2026-10-06,Servizio lento,Servizio lento al drive,Cassa
+CMP-00230,S006,2026-10-06,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00019,S001,2026-10-07,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00097,S003,2026-10-07,Errore ordine,Ordine sbagliato in app,App
+CMP-00091,S003,2026-10-08,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00093,S003,2026-10-08,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00200,S005,2026-10-08,Temperatura,Cappuccino freddo,Cassa
+CMP-00048,S002,2026-10-09,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00092,S003,2026-10-09,Gusto acido,Caffè con un retrogusto fermentato,Web
+CMP-00197,S005,2026-10-09,Gusto acido,Sapore acido e strano,App
+CMP-00199,S005,2026-10-09,Temperatura,Cappuccino freddo,Web
+CMP-00020,S001,2026-10-10,Temperatura,Caffè tiepido,Web
+CMP-00023,S001,2026-10-10,Servizio lento,Attesa lunga in coda,App
+CMP-00096,S003,2026-10-10,Servizio lento,Servizio lento al drive,Cassa
+CMP-00196,S005,2026-10-10,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00228,S006,2026-10-10,Errore ordine,Ordine sbagliato in app,Web
+CMP-00022,S001,2026-10-11,Temperatura,Caffè tiepido,Cassa
+CMP-00049,S002,2026-10-11,Temperatura,Caffè tiepido,Web
+CMP-00094,S003,2026-10-11,Gusto amaro,Caffè troppo amaro,App
+CMP-00095,S003,2026-10-11,Temperatura,Cappuccino freddo,Cassa
+CMP-00165,S004,2026-10-11,Gusto amaro,Espresso bruciato,Web
+CMP-00229,S006,2026-10-11,Temperatura,Cappuccino freddo,Web
+CMP-00026,S001,2026-10-12,Temperatura,Cappuccino freddo,Cassa
+CMP-00053,S002,2026-10-12,Servizio lento,Attesa lunga in coda,Web
+CMP-00027,S001,2026-10-13,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00099,S003,2026-10-13,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00169,S004,2026-10-13,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00204,S005,2026-10-13,Servizio lento,Servizio lento al drive,Cassa
+CMP-00231,S006,2026-10-13,Temperatura,Cappuccino freddo,Web
+CMP-00025,S001,2026-10-14,Servizio lento,Attesa lunga in coda,Cassa
+CMP-00051,S002,2026-10-14,Servizio lento,Servizio lento al drive,App
+CMP-00098,S003,2026-10-14,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00103,S003,2026-10-14,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00104,S003,2026-10-14,Gusto acido,Caffè con un retrogusto fermentato,App
+CMP-00107,S003,2026-10-14,Temperatura,Caffè tiepido,App
+CMP-00110,S003,2026-10-14,Temperatura,Caffè tiepido,Web
+CMP-00203,S005,2026-10-14,Errore ordine,Mi hanno dato un americano,Web
+CMP-00234,S006,2026-10-14,Gusto amaro,Caffè troppo amaro,Web
+CMP-00102,S003,2026-10-15,Gusto acido,Sapore acido e strano,Web
+CMP-00105,S003,2026-10-15,Gusto acido,Sapore acido e strano,App
+CMP-00205,S005,2026-10-15,Temperatura,Cappuccino freddo,Cassa
+CMP-00232,S006,2026-10-15,Gusto amaro,Caffè troppo amaro,Web
+CMP-00233,S006,2026-10-15,Errore ordine,Ordine sbagliato in app,Web
+CMP-00050,S002,2026-10-16,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00052,S002,2026-10-16,Errore ordine,Ordine sbagliato in app,Web
+CMP-00054,S002,2026-10-16,Errore ordine,Ordine sbagliato in app,Web
+CMP-00106,S003,2026-10-16,Gusto acido,Caffè con un retrogusto fermentato,Web
+CMP-00108,S003,2026-10-16,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00202,S005,2026-10-16,Gusto acido,"Gusto acido, l'ho lasciato",App
+CMP-00024,S001,2026-10-17,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00100,S003,2026-10-17,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00109,S003,2026-10-17,Gusto amaro,Espresso bruciato,Web
+CMP-00168,S004,2026-10-17,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00170,S004,2026-10-17,Gusto amaro,Espresso bruciato,Web
+CMP-00101,S003,2026-10-18,Gusto acido,"Espresso acido, quasi aceto",Web
+CMP-00206,S005,2026-10-18,Temperatura,Cappuccino freddo,Cassa
+CMP-00033,S001,2026-10-19,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00060,S002,2026-10-19,Gusto amaro,Espresso bruciato,App
+CMP-00061,S002,2026-10-19,Servizio lento,Servizio lento al drive,Web
+CMP-00174,S004,2026-10-19,Errore ordine,Ordine sbagliato in app,Web
+CMP-00235,S006,2026-10-19,Temperatura,Cappuccino freddo,App
+CMP-00111,S003,2026-10-20,Gusto acido,Caffè con un retrogusto fermentato,Cassa
+CMP-00112,S003,2026-10-20,Gusto acido,Caffè con un retrogusto fermentato,Cassa
+CMP-00113,S003,2026-10-20,Gusto acido,"Gusto acido, l'ho lasciato",App
+CMP-00116,S003,2026-10-20,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00118,S003,2026-10-20,Gusto acido,"Espresso acido, quasi aceto",Web
+CMP-00126,S003,2026-10-20,Errore ordine,Ordine sbagliato in app,Web
+CMP-00172,S004,2026-10-20,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00028,S001,2026-10-21,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00030,S001,2026-10-21,Temperatura,Cappuccino freddo,App
+CMP-00059,S002,2026-10-21,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00114,S003,2026-10-21,Gusto acido,Sapore acido e strano,App
+CMP-00120,S003,2026-10-21,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00125,S003,2026-10-21,Servizio lento,Attesa lunga in coda,Web
+CMP-00208,S005,2026-10-21,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00062,S002,2026-10-22,Temperatura,Cappuccino freddo,Cassa
+CMP-00119,S003,2026-10-22,Gusto acido,Sapore acido e strano,App
+CMP-00121,S003,2026-10-22,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00127,S003,2026-10-22,Gusto amaro,Espresso bruciato,Cassa
+CMP-00175,S004,2026-10-22,Errore ordine,Mi hanno dato un americano,App
+CMP-00207,S005,2026-10-22,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00236,S006,2026-10-22,Temperatura,Caffè tiepido,App
+CMP-00058,S002,2026-10-23,Gusto acido,Caffè con un retrogusto fermentato,Cassa
+CMP-00122,S003,2026-10-23,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00029,S001,2026-10-24,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00031,S001,2026-10-24,Gusto amaro,Espresso bruciato,App
+CMP-00055,S002,2026-10-24,Gusto acido,"Espresso aspro, non il solito",App
+CMP-00056,S002,2026-10-24,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00057,S002,2026-10-24,Gusto acido,Sapore acido e strano,Web
+CMP-00115,S003,2026-10-24,Gusto acido,Caffè con un retrogusto fermentato,Web
+CMP-00117,S003,2026-10-24,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00032,S001,2026-10-25,Gusto amaro,Caffè troppo amaro,App
+CMP-00123,S003,2026-10-25,Gusto acido,Sapore acido e strano,App
+CMP-00124,S003,2026-10-25,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00171,S004,2026-10-25,Gusto acido,"Espresso acido, quasi aceto",App
+CMP-00173,S004,2026-10-25,Servizio lento,Attesa lunga in coda,Web
+CMP-00070,S002,2026-10-26,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00148,S003,2026-10-26,Errore ordine,Mi hanno dato un americano,Cassa
+CMP-00179,S004,2026-10-26,Gusto amaro,Caffè troppo amaro,Cassa
+CMP-00067,S002,2026-10-27,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00131,S003,2026-10-27,Gusto acido,Il caffè oggi sa di acido,App
+CMP-00141,S003,2026-10-27,Gusto acido,"Gusto acido, l'ho lasciato",App
+CMP-00178,S004,2026-10-27,Gusto amaro,Espresso bruciato,Web
+CMP-00063,S002,2026-10-28,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00068,S002,2026-10-28,Gusto acido,Sapore acido e strano,App
+CMP-00132,S003,2026-10-28,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00134,S003,2026-10-28,Gusto acido,Il caffè oggi sa di acido,Cassa
+CMP-00135,S003,2026-10-28,Gusto acido,Caffè con un retrogusto fermentato,App
+CMP-00136,S003,2026-10-28,Gusto acido,"Gusto acido, l'ho lasciato",App
+CMP-00137,S003,2026-10-28,Gusto acido,Sapore acido e strano,Web
+CMP-00142,S003,2026-10-28,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00146,S003,2026-10-28,Temperatura,Cappuccino freddo,Web
+CMP-00209,S005,2026-10-28,Errore ordine,Ordine sbagliato in app,App
+CMP-00237,S006,2026-10-28,Gusto amaro,Caffè troppo amaro,App
+CMP-00034,S001,2026-10-29,Temperatura,Cappuccino freddo,Cassa
+CMP-00036,S001,2026-10-29,Temperatura,Caffè tiepido,Cassa
+CMP-00139,S003,2026-10-29,Gusto acido,"Espresso acido, quasi aceto",Web
+CMP-00145,S003,2026-10-29,Temperatura,Caffè tiepido,Cassa
+CMP-00238,S006,2026-10-29,Temperatura,Caffè tiepido,Web
+CMP-00239,S006,2026-10-29,Temperatura,Cappuccino freddo,Cassa
+CMP-00035,S001,2026-10-30,Temperatura,Caffè tiepido,Cassa
+CMP-00037,S001,2026-10-30,Errore ordine,Ordine sbagliato in app,Cassa
+CMP-00066,S002,2026-10-30,Gusto acido,"Espresso acido, quasi aceto",Web
+CMP-00129,S003,2026-10-30,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00130,S003,2026-10-30,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00143,S003,2026-10-30,Gusto acido,"Espresso aspro, non il solito",Cassa
+CMP-00176,S004,2026-10-30,Gusto acido,Il caffè oggi sa di acido,Web
+CMP-00210,S005,2026-10-30,Errore ordine,Ordine sbagliato in app,Web
+CMP-00065,S002,2026-10-31,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00128,S003,2026-10-31,Gusto acido,Sapore acido e strano,Web
+CMP-00140,S003,2026-10-31,Gusto acido,"Espresso aspro, non il solito",Web
+CMP-00144,S003,2026-10-31,Gusto acido,Caffè con un retrogusto fermentato,App
+CMP-00147,S003,2026-10-31,Errore ordine,Ordine sbagliato in app,App
+CMP-00177,S004,2026-10-31,Servizio lento,Servizio lento al drive,App
+CMP-00211,S005,2026-10-31,Servizio lento,Attesa lunga in coda,Web
+CMP-00064,S002,2026-11-01,Gusto acido,"Gusto acido, l'ho lasciato",Web
+CMP-00069,S002,2026-11-01,Gusto acido,"Gusto acido, l'ho lasciato",Cassa
+CMP-00133,S003,2026-11-01,Gusto acido,"Espresso acido, quasi aceto",Cassa
+CMP-00138,S003,2026-11-01,Gusto acido,"Gusto acido, l'ho lasciato",App
