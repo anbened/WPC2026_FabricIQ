@@ -1,5 +1,9 @@
 # Novità
 
+## 1.1 (novembre 2026)
+
+- Slide della sessione in PDF nella cartella `slides/`.
+
 ## 1.0 (novembre 2026)
 
 Prima versione, per la sessione a WPC 2026.
