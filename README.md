@@ -44,7 +44,7 @@ e uno con il contesto dell'**ontologia** di Fabric IQ.
 | [`docs/`](docs) | Idee chiave, guida al setup, script della demo e scelte di modellazione |
 | [`prompts/`](prompts) | Il prompt per farsi generare un'ontologia: modello generico ed esempio compilato |
 | [`tools/`](tools) | Script Python che generano ontologia e dati e verificano che la storia torni |
-| [`slides/`](slides) | Le slide saranno pubblicate in PDF dopo WPC 2026 |
+| [`slides/`](slides) | Le slide della sessione in PDF |
 
 Per scaricare insieme ontologia, dati, notebook e guida, scegli **Code › Download ZIP** su GitHub.
 
